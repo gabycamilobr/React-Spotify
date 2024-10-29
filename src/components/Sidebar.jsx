@@ -1,7 +1,9 @@
 export default function Sidebar({ children }) {
     return (
-        <aside className="bg-green-400 w-1/4 flex flex-col justify-around items-center">
-            {children}
-        </aside>
+        <>
+    <aside style={{ backgroundColor: '#a238fe' }} className="w-3/12 flex flex-col justify-around items-center">
+        {children}
+    </aside>
+        </>
     )
 }

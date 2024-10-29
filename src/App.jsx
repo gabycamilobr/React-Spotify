@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Container from "./components/Container";
-import ConteudoPrincipal from "./components/ConteudoPrincipal";
+import { Outlet } from "react-router-dom"
+import CardSidebar from "./components/CardSidebar";
 
 function App() {
 
@@ -19,20 +20,14 @@ function App() {
 
   return (
     <>
-      <Header/>
+      <Header />
       <Container>
-        <Sidebar/>
-        <ConteudoPrincipal>       
-          <>
-          <h1>Rock</h1>
-            {artistas
-            .map(artista => (
-              <div className="bg-red-500 w-28 h-28 flex flex-col justify-around items-center">
-                <h1>{artista.name}</h1>
-              </div>
-            ))}
-          </>
-        </ConteudoPrincipal>
+        <Sidebar>
+         <CardSidebar/>
+          <CardSidebar />
+          <CardSidebar />
+        </Sidebar>
+        <Outlet/>
       </Container>
     </>
   )
