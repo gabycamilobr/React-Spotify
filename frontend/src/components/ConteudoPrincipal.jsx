@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function ConteudoPrincipal() {
-  const [artistas, setArtista] = useState([]);
+  const [artistas, setArtistas] = useState([]);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch('https://migspoty.vercel.app/artistas')
       .then(res => res.json())
-      .then(res => setArtista(res))
+      .then(res => setArtistas(res))
       .catch(err => console.log(err))
       .finally(() => console.log("Acabou!"));
   }, []);

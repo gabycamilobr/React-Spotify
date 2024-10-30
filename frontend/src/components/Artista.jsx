@@ -8,10 +8,13 @@ export default function Artista(children) {
     const [artista, setArtista] = useState({})
  
     useEffect(() => {
+        setIsLoading(true);
         fetch(`https://migspoty.vercel.app/artistas/${id}`)
-            .then(res => res.json())
-            .then(data => { setArtista(data); console.log(data) })
-    }, []);
+        .then(res => res.json())
+        .then(data => {setArtista(data), console.log(data)})
+        .catch(err => console.log(err))
+        .finally(() => setIsLoading(false))
+    },[])
  
     return (
     <div className="bg-black w-3/4 p-16 flex flex-col items-center">
