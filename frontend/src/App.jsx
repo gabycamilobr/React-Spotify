@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Container from "./components/Container";
@@ -6,16 +5,14 @@ import { Outlet } from "react-router-dom"
 import CardSidebar from "./components/CardSidebar";
 
 function App() {
-
-  const [artistas, setArtistas] = useState([]);
-
   
   useEffect(() => {
-      fetch('http://localhost:3000/artistas')
+    setIsLoading(true);
+      fetch('https://spotify-deploy-api.vercel.app/Artistas')
       .then(res => res.json())
-      .then(data => {setArtistas(data); console.log})
+      .then(data => {setArtistas(data), console.log(data)})
       .catch(err => console.log(err))
-      .finally(() => console.log('Finalizou a requisição'))
+      .finally(() => setIsLoading(false))
   },[])
 
   return (
