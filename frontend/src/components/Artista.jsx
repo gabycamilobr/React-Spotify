@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom"
 export default function Artista(children) {
  
     const { id } = useParams()
- 
     const [artista, setArtista] = useState({})
+    const [isLoading, setIsLoading] = useState(false);
  
     useEffect(() => {
         setIsLoading(true);

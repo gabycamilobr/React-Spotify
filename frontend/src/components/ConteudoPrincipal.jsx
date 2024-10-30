@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function ConteudoPrincipal() {
   const [artistas, setArtistas] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);

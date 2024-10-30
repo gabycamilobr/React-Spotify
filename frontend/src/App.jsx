@@ -3,8 +3,12 @@ import Sidebar from "./components/Sidebar";
 import Container from "./components/Container";
 import { Outlet } from "react-router-dom"
 import CardSidebar from "./components/CardSidebar";
+import { useEffect, useState } from "react"
+
 
 function App() {
+  const [artista, setArtista] = useState({})
+  const [isLoading, setIsLoading] = useState(false);
   
   useEffect(() => {
     setIsLoading(true);
