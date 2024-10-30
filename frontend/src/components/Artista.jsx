@@ -8,7 +8,7 @@ export default function Artista(children) {
     const [artista, setArtista] = useState({})
  
     useEffect(() => {
-        fetch(`https://spotify-deploy-api.vercel.app/artistas/${id}`)
+        fetch(`https://react-spotify-ukht.vercel.app/artistas/${id}`)
             .then(res => res.json())
             .then(data => { setArtista(data); console.log(data) })
     }, []);

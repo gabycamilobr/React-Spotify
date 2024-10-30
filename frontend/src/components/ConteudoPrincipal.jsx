@@ -5,7 +5,7 @@ export default function ConteudoPrincipal() {
   const [artistas, setArtistas] = useState([]);
 
   useEffect(() => {
-    fetch('https://spotify-deploy-api.vercel.app/Artistas')
+    fetch('https://react-spotify-ukht.vercel.app/artistas')
       .then(res => res.json())
       .then(res => setArtistas(res))
       .catch(err => console.log(err))
