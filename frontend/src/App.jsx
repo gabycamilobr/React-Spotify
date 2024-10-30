@@ -5,15 +5,6 @@ import { Outlet } from "react-router-dom"
 import CardSidebar from "./components/CardSidebar";
 
 function App() {
-  
-  useEffect(() => {
-    setIsLoading(true);
-      fetch('https://migspoty.vercel.app/artistas')
-      .then(res => res.json())
-      .then(data => {setArtista(data), console.log(data)})
-      .catch(err => console.log(err))
-      .finally(() => setIsLoading(false))
-  },[])
 
   return (
     <>
