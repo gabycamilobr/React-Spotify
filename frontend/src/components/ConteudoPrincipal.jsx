@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function ConteudoPrincipal() {
-  const [artistas, setArtistas] = useState([]);
+  const [artistas, setArtista] = useState([]);
 
   useEffect(() => {
     fetch('https://react-spotify-ukht.vercel.app/artistas')

@@ -1,7 +1,7 @@
 import express from 'express';
 import conectDb from './db.js';
 import cors from 'cors';
-import artista from './models/Artistas.js';
+import artistas from './models/Artistas.js';
 
 const app = express();
 app.use(cors(
@@ -20,14 +20,14 @@ conexao.once('open', () => {
     console.log('Conectado no MongoDB');
 });
 
-app.get('/Artistas', async (req, res) => {
-    const listaArtistas = await artista.find({});
+app.get('/artistas', async (req, res) => {
+    const listaArtistas = await artistas.find({});
     res.status(200).json(listaArtistas);
 });
 
 app.get('/artistas/:id', async (req,res)=>{
-    const artistas = await artista.findById(req.params.id);
-    res.status(200).json(artistas);
+    const artista = await artistas.findById(req.params.id);
+    res.status(200).json(artista);
 })
 
 app.get('/', (req, res) => {
