@@ -8,7 +8,7 @@ function App() {
   
   useEffect(() => {
     setIsLoading(true);
-      fetch('https://react-spotify-ukht.vercel.app/artistas')
+      fetch('https://migspoty.vercel.app/artistas')
       .then(res => res.json())
       .then(data => {setArtista(data), console.log(data)})
       .catch(err => console.log(err))

@@ -5,9 +5,9 @@ export default function ConteudoPrincipal() {
   const [artistas, setArtista] = useState([]);
 
   useEffect(() => {
-    fetch('https://react-spotify-ukht.vercel.app/artistas')
+    fetch('https://migspoty.vercel.app/artistas')
       .then(res => res.json())
-      .then(res => setArtistas(res))
+      .then(res => setArtista(res))
       .catch(err => console.log(err))
       .finally(() => console.log("Acabou!"));
   }, []);
